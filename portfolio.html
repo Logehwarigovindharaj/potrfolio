@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="portfolio.html">Home</a></li>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <h1>Logeshwari Govindharaj</h1>
+    <p>Frontend Developer</p>
+    <button onclick="scrollToSection('about')">Learn More</button>
+    <button onclick="scrollToSection('contact')">Contact Me</button>
+  </section>
+
+  <section id="projects" style="background-color: lightpink;">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <button>View</button>
+    </div>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <button>View</button>
+    </div>
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <button>View</button>
+    </div>
+  </section>
+
+  <section id="about" style="background-color: lightgreen;">
+    <h2>About Me</h2>
+    <img src="avapic.jpg" alt="avapic">
+    <p>I am a passionate frontend developer with experience in HTML, CSS, JavaScript.</p>
+    <button onclick="scrollToSection('contact')">Get in Touch</button>
+  </section>
+
+  <section id="contact" style="background-color: lightskyblue;">
+    <h2>Contact</h2>
+    <p>Email: your.email@example.com</p>
+  </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Footer Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 40px 20px;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .footer-about {
+      flex: 1 1 200px;
+    }
+
+    .footer-about h2 {
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .footer-about p.title {
+      color: #00aced;
+      margin: 0 0 10px 0;
+    }
+
+    .footer-about p.description {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .footer-links,
+    .footer-social {
+      flex: 1 1 150px;
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .footer-links ul,
+    .footer-social ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li,
+    .footer-social ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links ul li a,
+    .footer-social ul li a {
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links ul li a:hover,
+    .footer-social ul li a:hover {
+      color: #00aced;
+    }
+
+    .footer-social ul li a i {
+      font-size: 18px;
+      margin-right: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Other Page Content -->
+  <main style="padding: 40px; text-align: center;">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Scroll down to see the footer</p>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-about">
+        <h2>John Doe</h2>
+        <p class="title">Front-End Developer</p>
+        <p class="description">Passionate about creating interactive, accessible, and user-friendly web experiences.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Skill</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Connect -->
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="#"><i class="fab fa-twitter"></i>Twitter</a></li>
+          <li><a href="#"><i class="fab fa-facebook"></i>Facebook</a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i>Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects - Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* Reset & base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0f0f1b;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Pink bubble background */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 105, 180, 0.15);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #1e1e2f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: hotpink;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: hotpink;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .projects h2 {
+      font-size: 2.5rem;
+      color: hotpink;
+      margin-bottom: 1rem;
+    }
+
+    .projects p {
+      color: #ccc;
+      margin-bottom: 3rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #1f1f2f;
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: left;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      background: #27293d;
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      color: hotpink;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    /* Footer */
+    footer {
+      background: #1e1e2f;
+      padding: 2rem 1rem;
+      color: #ccc;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-social {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-about h2 {
+      color: hotpink;
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+      color: hotpink;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+      color: hotpink;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: hotpink;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bubble Background -->
+  <div class="bubbles" id="bubbles"></div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">MyPortfolio</div>
+    <ul>
+      <li><a href="portfolio.html">Home</a></li>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    
+     
+    </ul>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="projects">
+    <h2>My Projects</h2>
+    <p>A selection of my recent work across different technologies and tools.</p>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>PORTFOLIO WEBSITE</h3>
+        <p>Personal responsive website built using HTML, CSS, JavaScript.</p>
+      </div>
+      <div class="project-card">
+        <h3>JAVA SCRIPT</h3>
+        <p>React-based weather dashboard fetching real-time API data.</p>
+      </div>
+      <div class="project-card">
+        <h3>HTML</h3>
+        <p>Task manager using JavaScript with local storage and animations.</p>
+      </div>
+      <div class="project-card">
+        <h3>CSS</h3>
+        <p>Full-stack blog system using Node.js, MongoDB, and Express.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Font Awesome for Social Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Developer Info -->
+    <div class="footer-about">
+      <h2>Logeshwari</h2>
+      <p>Frontend Developer crafting clean and responsive web experiences.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Project</a></li>
+      </ul>
+    </div>
+
+    <!-- Connect Section -->
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Your Name | Frontend Developer | All rights reserved.
+  </div>
+</footer>
+
+<!-- Footer CSS -->
+<style>
+.footer {
+  background-color: #1e1e2f;
+  color: #ccc;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.footer-about h2 {
+  color: #00ffff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  max-width: 300px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #00ffff;
+}
+
+.social-icons a {
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00ffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+</style>
+
+<!-- Optional JS (Alert on Click) -->
+<script>
+  document.querySelectorAll('.social-icons a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Redirecting to ' + this.title);
+    });
+  });
+</script>
+
+
+  <!-- JavaScript for Bubble Animation -->
+  <script>
+    const bubbleContainer = document.getElementById('bubbles');
+
+    for (let i = 0; i < 40; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.width = bubble.style.height = 10 + Math.random() * 40 + 'px';
+      bubble.style.animationDuration = 4 + Math.random() * 6 + 's';
+      bubble.style.opacity = Math.random();
+      bubbleContainer.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>

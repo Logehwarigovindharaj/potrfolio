@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Portfolio</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f0f1b;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background Animation */
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.4;
+      animation: floatUp 10s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Navbar */
+    nav {
+      background: #1e1e2f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #00ffff;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ffff;
+    }
+
+    /* About Section */
+    .about {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-img {
+      flex: 1 1 100px;
+    }
+
+    .about-img img {
+      width: 70%;
+      border-radius: 800px;
+      box-shadow: 0 0 500px rgba(0,255,255,0.4);
+    }
+
+    .about-content {
+      flex: 2 1 400px;
+    }
+
+    .about-content h2 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      margin-bottom: 1rem;
+    }
+
+    .about-content p {
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .about-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .about-content ul li {
+      margin-bottom: 0.5rem;
+      color: #aaa;
+    }
+
+    /* Footer */
+    footer {
+      background: #1e1e2f;
+      padding: 2rem 1rem;
+      color: #ccc;
+      margin-top: 4rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 2rem;
+    }
+
+    .footer-about h2 {
+      color: #00ffff;
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+      color: #00ffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.4rem;
+      transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .social-icons a {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00ffff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Bubbles -->
+  <div class="background" id="bubbleBackground"></div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">MyPortfolio</div>
+    <ul>
+      <li><a href="portfolio.html">Home</a></li>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+h
+  <!-- About Section -->
+  <section class="about">
+    <div class="about-img">
+      <img src="logeshwari.img" alt="Your Photo">
+    </div>
+    <div class="about-content">
+      <h2>About Me</h2>
+      <p>Hello! I'm a passionate Frontend Developer with experience in building responsive, accessible, and visually appealing websites. I enjoy turning ideas into reality using clean code and modern tools.</p>
+      <ul>
+        <li>🎓 Degree: B.E. in Computer Science</li>
+        <li>📍 Location: Tamil Nadu, India</li>
+        <li>📧 Email: logesh05govindharaj@gmail.com</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Font Awesome CDN (Include in <head>) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- Footer HTML -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Developer Info -->
+    <div class="footer-about">
+      <h2>Logeshwari</h2>
+      <p>Frontend Developer crafting modern, responsive web experiences.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Project</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Your Name | Frontend Developer | All rights reserved.
+  </div>
+</footer>
+
+<!-- CSS -->
+<style>
+  .footer {
+    background: #1e1e2f;
+    color: #ccc;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .footer-about h2 {
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-about p {
+    font-size: 0.95rem;
+    max-width: 300px;
+  }
+
+  .footer-links h3,
+  .footer-social h3 {
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links ul li a:hover {
+    color: #00ffff;
+  }
+
+  .social-icons a {
+    color: #ccc;
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #00ffff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>
+
+<!-- JavaScript (Optional: Alert on icon click) -->
+<script>
+  document.querySelectorAll('.social-icons a').forEach(icon => {
+    icon.addEventListener('click', function(e) {
+      e.preventDefault(); // Remove this if you want it to go to the link
+      alert(`Redirecting to ${this.title}`);
+    });
+  });
+</script>
+
+  <!-- JavaScript: Bubble Background Animation -->
+  <script>
+    const colors = ['#00ffff', '#ff66cc', '#66ffcc', '#ffcc00', '#66ccff'];
+    const container = document.getElementById('bubbleBackground');
+
+    for (let i = 0; i < 35; i++) {
+      const bubble = document.createElement('div');
+      const size = 20 + Math.random() * 60;
+      bubble.classList.add('bubble');
+      bubble.style.width = bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * 100}vw`;
+      bubble.style.bottom = `-${size}px`;
+      bubble.style.background = colors[Math.floor(Math.random() * colors.length)];
+      bubble.style.animationDuration = `${6 + Math.random() * 10}s`;
+      container.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>

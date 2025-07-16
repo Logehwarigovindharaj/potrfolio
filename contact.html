@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me - Portfolio</title>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0f0f1b;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Bubble Background */
+    .bubbles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -60px;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: floatUp 12s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Navigation */
+    nav {
+      background: #1e1e2f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      color: #00ffff;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ffff;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      color: #00ffff;
+      margin-bottom: 1rem;
+    }
+
+    .contact p {
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      background: #1e1e2f;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    form .form-group {
+      margin-bottom: 1.2rem;
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      background: #2e2e40;
+      color: #fff;
+    }
+
+    form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    form button {
+      padding: 0.8rem 1.5rem;
+      background: #00ffff;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    form button:hover {
+      background: #00c2c2;
+    }
+
+    /* Footer */
+    footer {
+      background: #1e1e2f;
+      padding: 2rem 1rem;
+      color: #ccc;
+      margin-top: 3rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-about h2 {
+      color: #00ffff;
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+      color: #00ffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.4rem;
+      transition: 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .social-icons a {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      color: #ccc;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00ffff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bubbles -->
+  <div class="bubbles" id="bubbles"></div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">MyPortfolio</div>
+    <ul>
+      <li><a href="portfolio.html">Home</a></li>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Have a project in mind or just want to say hi? Fill out the form below.</p>
+
+    <form>
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" placeholder="Write your message..." required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- Footer HTML -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- About -->
+    <div class="footer-about">
+      <h2>Logeshwari</h2>
+      <p>Frontend Developer crafting user-friendly and modern web interfaces.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Project</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="footer-bottom">
+    &copy; 2025 Your Name | Frontend Developer | All rights reserved.
+  </div>
+</footer>
+
+<!-- CSS Styling -->
+<style>
+  .footer {
+    background-color: #1e1e2f;
+    color: #ccc;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 2rem;
+  }
+
+  .footer-about h2 {
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-about p {
+    font-size: 0.95rem;
+    max-width: 300px;
+  }
+
+  .footer-links h3,
+  .footer-social h3 {
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links ul li {
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links ul li a:hover {
+    color: #00ffff;
+  }
+
+  .social-icons a {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    color: #ccc;
+    transition: color 0.3s;
+  }
+
+  .social-icons a:hover {
+    color: #00ffff;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>
+
+<!-- Optional JavaScript -->
+<script>
+  // Example: Alert when social icon clicked
+  document.querySelectorAll('.social-icons a').forEach(icon => {
+    icon.addEventListener('click', function(e) {
+      e.preventDefault(); // prevent redirect for demo
+      alert(`Redirecting to ${this.title}`);
+    });
+  });
+</script>
+
+
+  <!-- JS for Bubble Animation -->
+  <script>
+    const colors = ['#00ffff', '#ff00ff', '#00ff99', '#ff6ec7', '#99ccff'];
+    const bubblesContainer = document.getElementById('bubbles');
+
+    for (let i = 0; i < 40; i++) {
+      const bubble = document.createElement('div');
+      const size = 10 + Math.random() * 40;
+      bubble.classList.add('bubble');
+      bubble.style.width = bubble.style.height = size + 'px';
+      bubble.style.left = Math.random() * 100 + 'vw';
+      bubble.style.background = colors[Math.floor(Math.random() * colors.length)];
+      bubble.style.animationDuration = (5 + Math.random() * 10) + 's';
+      bubblesContainer.appendChild(bubble);
+    }
+  </script>
+
+</body>
+</html>
