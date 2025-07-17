@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Services</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #0f0f1b;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Bubble Animation */
+    .bubbles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Navbar */
+    nav {
+      background: #1e1e2f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ffff;
+    }
+
+    /* Service Section */
+    .services {
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00ffff;
+    }
+
+    .services p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 3rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #1f1f2f;
+      padding: 2rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      background-color: #27293d;
+    }
+
+    .service-card h3 {
+      color: #00ffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    /* Footer */
+    footer {
+      background: #1e1e2f;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      color: #ccc;
+      margin-top: 3rem;
+    }
+
+    /* Bubble styling via JS */
+    .bubble {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bubbles Background -->
+  <div class="bubbles" id="bubbles"></div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">MyPortfolio</div>
+    <ul>
+      <li><a href="portfolio.html">Home</a></li>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Service Section -->
+  <section class="services">
+    <h2>My Services</h2>
+    <p>I offer a wide range of services to help bring your digital ideas to life.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Web Design</h3>
+        <p>Modern, responsive and user-friendly UI designs that attract and engage.</p>
+      </div>
+      <div class="service-card">
+        <h3>Frontend Development</h3>
+        <p>High-performance frontend applications using HTML, CSS, JavaScript, React.</p>
+      </div>
+      <div class="service-card">
+        <h3>Backend Integration</h3>
+        <p>Connect your frontend to backend services using secure REST APIs.</p>
+      </div>
+      <div class="service-card">
+        <h3>SEO Optimization</h3>
+        <p>Improve search visibility with fast, optimized code and SEO best practices.</p>
+      </div>
+    </div>
+  </section>
+
+ <!-- Font Awesome CDN for Social Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- Footer Section -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-about">
+      <h2>Logeshwari</h2>
+      <p>I'm a passionate Frontend Developer creating modern and responsive web experiences.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Project</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 YourName | Frontend Developer | All rights reserved.
+  </div>
+</footer>
+
+<style>
+/* Footer Styles */
+.site-footer {
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #444;
+}
+
+.footer-about h2 {
+  color: #00ffff;
+  font-size: 1.5rem;
+}
+
+.footer-about p {
+  max-width: 300px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  margin-bottom: 0.7rem;
+  color: #00ffff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #00ffff;
+}
+
+.footer-social .social-icons a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+  color: #00ffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
+}
+</style>
+
+  <!-- JavaScript for Bubbles -->
+  <script>
+    const bubblesContainer = document.getElementById("bubbles");
+
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+      bubble.style.left = Math.random() * 100 + "vw";
+      bubble.style.animationDuration = 5 + Math.random() * 5 + "s";
+      bubble.style.width = bubble.style.height = 10 + Math.random() * 40 + "px";
+      bubble.style.opacity = Math.random();
+      bubblesContainer.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>

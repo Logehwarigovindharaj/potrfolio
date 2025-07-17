@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills - Portfolio</title>
+
+  <!-- Font Awesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #0f0f1b;
+      color: #fff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Bubble background */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -50px;
+      background: rgba(0, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: rise 10s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    /* Navigation bar */
+    nav {
+      background: #1e1e2f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ffff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ffff;
+    }
+
+    /* Skills Section */
+    .skills-section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .skills-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00ffff;
+    }
+
+    .skills-section p {
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .skill {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .skill-name {
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .skill-bar {
+      background: #333;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 15px;
+      background: #00ffff;
+      width: 0;
+      animation: fillSkill 2s ease forwards;
+    }
+
+    @keyframes fillSkill {
+      to {
+        width: var(--fill-width);
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #1e1e2f;
+      padding: 2rem 1rem;
+      color: #ccc;
+      margin-top: 3rem;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-social {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-about h2 {
+      color: #00ffff;
+    }
+
+    .footer-links h3,
+    .footer-social h3 {
+      color: #00ffff;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      text-decoration: none;
+      color: #ccc;
+      display: block;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links ul li a:hover {
+      color: #00ffff;
+    }
+
+    .footer-social .social-icons a {
+      color: #ccc;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      transition: color 0.3s;
+    }
+
+    .footer-social .social-icons a:hover {
+      color: #00ffff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bubble Background -->
+  <div class="bubbles" id="bubbles"></div>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">MyPortfolio</div>
+    <ul>
+<li><a href="portfolio.html">Home</a></li>
+      <li><a href="index.html">Projects</a></li>
+      <li><a href="skill.html">Skills</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2>My Skills</h2>
+    <p>Here are some of the technologies and tools I excel in.</p>
+
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 95%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">CSS</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 90%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 85%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">React</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 80%;"></div></div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-name">Git & GitHub</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--fill-width: 75%;"></div></div>
+    </div>
+  </section>
+
+  <!-- Include Font Awesome CDN for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- Footer Section -->
+<footer class="custom-footer">
+  <div class="footer-container">
+
+    <!-- Developer Info -->
+    <div class="footer-about">
+      <h2>Logeshwari</h2>
+      <p>Frontend Developer crafting modern and user-friendly interfaces.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Project</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h3>Connect</h3>
+      <div class="social-icons">
+        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    &copy; 2025 Your Name | Frontend Developer | All rights reserved.
+  </div>
+</footer>
+
+<!-- CSS Styling -->
+<style>
+.custom-footer {
+  background-color: #1e1e2f;
+  color: #fff;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-about h2 {
+  color: #00ffff;
+  font-size: 1.5rem;
+}
+
+.footer-about p {
+  color: #ccc;
+  margin-top: 0.5rem;
+  max-width: 300px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #00ffff;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #00ffff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+</style>
+
+<!-- Optional JS for Social Icon Click Alerts -->
+<script>
+  document.querySelectorAll('.social-icons a').forEach(icon => {
+    icon.addEventListener('click', (e) => {
+      e.preventDefault();
+      const platform = icon.title;
+      alert(`Redirecting to ${platform}`);
+    });
+  });
+</script>
+
+
+  <!-- JavaScript for Bubble Animation -->
+  <script>
+    const bubblesContainer = document.getElementById("bubbles");
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement("div");
+      bubble.classList.add("bubble");
+      bubble.style.left = Math.random() * 100 + "vw";
+      bubble.style.width = bubble.style.height = 10 + Math.random() * 40 + "px";
+      bubble.style.animationDuration = 5 + Math.random() * 5 + "s";
+      bubble.style.opacity = Math.random();
+      bubblesContainer.appendChild(bubble);
+    }
+  </script>
+</body>
+</html>
